@@ -16,22 +16,37 @@ class App extends Component {
       buildingLat: null,
       buildingLng: null,
       targetLat: null,
-      targetLng: null
+      targetLng: null,
+      markers: []
 
     }
   }
 
   addressHandler = (lat, lng) => {
+    this.state.currentMap.setCenter(new window.google.maps.LatLng(lat, lng));
 
-    this.setState({ targetLat: lat })
-    this.setState({ targetLng: lng })
   }
 
 
-  buildingHandler = (lat, lng) => {
+  buildingHandler = async (lat, lng, suit) => {
+    console.log(suit)
+    this.state.currentMap.setCenter(new window.google.maps.LatLng(lat, lng));
 
-    this.setState({ buildingLat: lat })
-    this.setState({ buildingLng: lng })
+    new window.google.maps.Marker(
+      {
+        position: { lat:parseFloat(lat), lng:parseFloat(lng) },
+        map: this.state.currentMap,
+        label: '4E',
+        // icon: mapIcon
+      });
+
+      // markers = this.state.markers
+      // markers.push(markers)
+      // this.setState({markers: markers})
+
+      
+
+
   }
 
   componentDidMount() {
@@ -48,8 +63,8 @@ class App extends Component {
 
 
   showPosition = (position) => {
-    this.setState({ centerLat: position.coords.latitude })
-    this.setState({ centerLng: position.coords.longitude })
+    this.setState({ targetLat: position.coords.latitude })
+    this.setState({ targetLng: position.coords.longitude })
   }
 
   render() {
@@ -66,7 +81,7 @@ class App extends Component {
 
         <div className="Map_Container">
 
-        {this.state.targetLat && this.state.buildingLat && <Map
+        <Map
             id="Map"
             options={{
               center: { lat: parseFloat(this.state.targetLat), lng: parseFloat(this.state.targetLng) },
@@ -80,62 +95,11 @@ class App extends Component {
             }}
             onMapLoad={map => {
 
-              const marker = new window.google.maps.Marker(
-                {
-                  position: { lat: parseFloat(this.state.buildingLat), lng: parseFloat(this.state.buildingLng) },
-                  map: map,
-                  label: '',
-                  // icon: mapIcon
-                });
-            }}
-          />}
-        {this.state.targetLat && <Map
-            id="Map"
-            options={{
-              center: { lat: parseFloat(this.state.targetLat), lng: parseFloat(this.state.targetLng) },
-              zoom: 19,
-              fullscreenControl: false,
-              streetViewControl: false,
-              mapTypeControl: false,
-              mapTypeId: 'satellite',
-              tilt: 0,
-              rotateControl: true,
-            }}
-            onMapLoad={map => {
+              this.setState({currentMap: map})
 
-              const marker = new window.google.maps.Marker(
-                {
-                  position: { lat: parseFloat(this.state.buildingLat), lng: parseFloat(this.state.buildingLng) },
-                  map: map,
-                  label: '',
-                  // icon: mapIcon
-                });
             }}
           />}
 
-          {!this.state.targetLat && <Map
-            id="Map"
-            options={{
-              center: { lat: parseFloat(this.state.centerLat), lng: parseFloat(this.state.centerLng) },
-              zoom: 19,
-              fullscreenControl: false,
-              streetViewControl: false,
-              mapTypeControl: false,
-              mapTypeId: 'satellite',
-              tilt: 0,
-              rotateControl: true,
-            }}
-            onMapLoad={map => {
-
-              const marker = new window.google.maps.Marker(
-                {
-                  position: { lat: parseFloat(this.state.buildingLat), lng: parseFloat(this.state.buildingLng) },
-                  map: map,
-                  label: '',
-                  // icon: mapIcon
-                });
-            }}
-          />}
         </div>
       </div>
     );

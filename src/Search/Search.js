@@ -62,11 +62,15 @@ class Search extends Component {
 
         return (
             <div className="Search">
+                <h3>
+                    Search for an appartment to get directions to exact building locations:
+                </h3>
                 <form>
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
                     <ul className="Address_Results">
                         {addresses.map(address => <li key={address} onClick={() => this.centerAddress(address)}>{address}</li>)}
                     </ul>
+
                     {this.state.buildingList[0] &&
                         <ul className="Suit_Results">
                             {buildings.map(building => <li key={building[0]} onClick={() => this.centerBuilding(building[1], building[2])}>{building[0]}</li>)}
