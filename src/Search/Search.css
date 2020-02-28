@@ -1,0 +1,25 @@
+.Search{
+    position: absolute;
+    z-index: 100;
+    width: 20vw;
+    height: 60vh;
+    background-color: white;
+}
+.Search li{
+    list-style: none;
+}
+.Address_Results li{
+    width: 5vw;
+    margin-top: 10px;
+}
+.Suit_Results li{
+    width: 2vw;
+}
+.Address_Results li:hover{
+    background-color: gray;
+    color: hotpink;
+}
+.Suit_Results li:hover{
+    background-color: gray;
+    color: lime;
+}

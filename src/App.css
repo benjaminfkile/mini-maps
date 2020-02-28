@@ -1,0 +1,15 @@
+html, body {
+  overflow: hidden;
+}
+
+.App {
+  margin: 0px;
+  padding: 0px;
+}
+.App_Container{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+
+}
+
