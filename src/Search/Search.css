@@ -1,20 +1,36 @@
 .Search{
     position: absolute;
     z-index: 100;
-    width: 20vw;
-    height: 100vh;
-    background-color: white;
+    width: 15vw;
+    top: 2vh;
+    left: .8vw;
+    height: 80vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    background-color: rgb(255, 255, 255);
+    border-style: solid;
+    border-color: white;
+    border-radius: 3px;
     }
+.Search h2{
+    text-align: center;
+}
 .Search li{
     list-style: none;
-    }
+}
+.Search input{
+    display: flex;
+    width: 15vw;
+    margin-left: auto;
+    margin-right: auto;
+}
 .Address_Results h2{
-    width: 5vw;
+    text-align: center;
     margin-top: 10px;
     }
 .Suit_Results{
     position: absolute;
-    height: 20vh;
+    height: 35vh;
     left: 0vw;
     overflow: scroll;
     }

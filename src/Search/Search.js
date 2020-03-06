@@ -13,67 +13,62 @@ class Search extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
     }
-
     handleChange(event) {
         event.preventDefault();
         this.setState({ value: event.target.value });
         this.addressFilter(this.state.value)
-
     }
-
     addressFilter = (args) => {
-        const addresses = []
-        const buildings = []
+        let addresses = []
+        let buildings = []
         this.setState({ buildingList: buildings })
         this.setState({ addressList: addresses })
         this.setState({ navLink: null })
         if (args) {
-            for (let i = 0; i < this.props.store.locations.length; i++) {
-                if (args.substring(0, args.length) === this.props.store.locations[i].address.substring(0, args.length)) {
-                    addresses.push(this.props.store.locations[i].address)
-                    buildings.push(this.props.store.locations[i].buildings)
-
+            for (let i = 0; i < this.props.addresses.length; i++) {
+                if (args.substring(0, args.length) === this.props.addresses[i].address.substring(0, args.length)) {
+                    addresses.push(this.props.addresses[i])
+                    for (let j = 0; j < this.props.buildings.length; j++) {
+                        if (this.props.buildings[j].addressId === this.props.addresses[i].id) {
+                            buildings.push(this.props.buildings[j])
+                        }
+                    }
                 }
             }
         }
         this.setState({ buildingList: buildings })
         this.setState({ addressList: addresses })
-
     }
 
-    centerAddress = (args) => {
-        for (let i = 0; i < this.props.store.locations.length; i++) {
-            if (args === this.props.store.locations[i].address) {
-                this.props.addressHandler(this.props.store.locations[i].initCoords[0], this.props.store.locations[i].initCoords[1])
-            }
-        }
+    centerAddress = (addressCoords) => {
+        let coords = addressCoords.split(',')
+        this.props.addressHandler(coords[0], coords[1])
     }
-    centerBuilding = async (lat, lng) => {
-        this.props.buildingHandler(lat, lng)
-        this.setState({ navLink: 'https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lng })
+    centerBuilding = async (buildingCoords) => {
+        let coords = buildingCoords.split(',')
+        this.props.buildingHandler(coords[0], coords[1])
+        this.setState({ navLink: 'https://www.google.com/maps/search/?api=1&query=' + coords[0] + ',' + coords[1] })
     }
 
     render() {
 
-        let buildings = this.state.buildingList[0]
+        let buildings = this.state.buildingList
         let addresses = this.state.addressList
-        console.log(this.props.addresses)
-        console.log(this.props.buildings)
 
         return (
             <div className="Search">
-                <h3>
-                    Search for an appartment to get directions to exact building locations:
-                </h3>
+                <h2>
+                    Search for an address to get directions to exact building locations
+                </h2>
                 <form>
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
-                    {this.state.value && <h2
-                        onClick={() => this.centerAddress(addresses[0])}>{addresses[0]}
+                    {addresses.length > 0 && <h2
+                        onClick={() => this.centerAddress(addresses[0].initCoords)}>{addresses[0].address}
                     </h2>}
 
-                    {this.state.buildingList[0] && this.state.value &&
+                    {this.state.buildingList && this.state.value &&
                         <ul className="Suit_Results">
-                            {buildings.map(building => <li key={building[0]} onClick={() => this.centerBuilding(building[1], building[2])}>{building[0]}</li>)}
+                            {buildings.map(building => <li key={building[0]} onClick={() => this.centerBuilding(building.coords)}>{building.number}</li>)}
                         </ul>}
 
                     {this.state.navLink && <div className="Nav_Link">

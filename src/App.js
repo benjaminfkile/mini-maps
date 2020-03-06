@@ -54,8 +54,8 @@ class App extends Component {
 
   componentDidMount() {
     this.getLocation()
-    // this.getAddresses()
-    // this.getBuildings()
+    this.getAddresses()
+    this.getBuildings()
   }
 
   getLocation = () => {
