@@ -4,22 +4,35 @@
     width: 20vw;
     height: 100vh;
     background-color: white;
-}
+    }
 .Search li{
     list-style: none;
-}
-.Address_Results li{
+    }
+.Address_Results h2{
     width: 5vw;
     margin-top: 10px;
-}
-.Suit_Results li{
-    width: 2vw;
-}
-.Address_Results li:hover{
+    }
+.Suit_Results{
+    position: absolute;
+    height: 20vh;
+    left: 0vw;
+    overflow: scroll;
+    }
+
+
+.Address_Results h2:hover{
     background-color: gray;
     color: hotpink;
-}
+    }
 .Suit_Results li:hover{
     background-color: gray;
     color: lime;
-}
+    }
+
+.Nav_Link{
+    z-index: 100;
+    position: absolute;
+    left: 5vw;
+    top: 50vw;
+    }
+
