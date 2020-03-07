@@ -20,7 +20,7 @@ class App extends Component {
 
 
   getAddresses = () => {
-    let targetUrl = 'http://localhost:8000/api/addresses';
+    let targetUrl = 'https://glacial-mesa-10951.herokuapp.com/api/addresses';
     fetch(targetUrl)
       .then(response => response.json())
       .then(data => {
@@ -30,7 +30,7 @@ class App extends Component {
   }
 
   getBuildings = () => {
-    let targetUrl = 'http://localhost:8000/api/buildings';
+    let targetUrl = 'https://glacial-mesa-10951.herokuapp.com/api/buildings';
     fetch(targetUrl)
       .then(response => response.json())
       .then(data => {
@@ -95,8 +95,8 @@ class App extends Component {
               fullscreenControl: false,
               streetViewControl: false,
               mapTypeControl: false,
-              mapTypeId: 'satellite',
-              tilt: 0,
+              mapTypeId: 'hybrid',
+              tilt: 45,
               rotateControl: true,
             }}
             onMapLoad={map => {

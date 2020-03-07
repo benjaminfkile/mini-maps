@@ -26,7 +26,7 @@ class Search extends Component {
         this.setState({ navLink: null })
         if (args) {
             for (let i = 0; i < this.props.addresses.length; i++) {
-                if (args.substring(0, args.length) === this.props.addresses[i].address.substring(0, args.length)) {
+                if (args.substring(0, args.length).toUpperCase() === this.props.addresses[i].address.substring(0, args.length).toUpperCase()) {
                     addresses.push(this.props.addresses[i])
                     for (let j = 0; j < this.props.buildings.length; j++) {
                         if (this.props.buildings[j].addressId === this.props.addresses[i].id) {
@@ -58,24 +58,26 @@ class Search extends Component {
         return (
             <div className="Search">
                 <h2>
-                    Search for an address to get directions to exact building locations
+                    Search for an address
                 </h2>
                 <form>
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
-                    {addresses.length > 0 && <h2
-                        onClick={() => this.centerAddress(addresses[0].initCoords)}>{addresses[0].address}
-                    </h2>}
+                    {addresses.length > 0 && this.state.value && <div className="Address_Results">
+                        <h2
+                            onClick={() => this.centerAddress(addresses[0].initCoords)}>{addresses[0].address}
+                        </h2>
+                    </div>}
+
 
                     {this.state.buildingList && this.state.value &&
                         <ul className="Suit_Results">
                             {buildings.map(building => <li key={building[0]} onClick={() => this.centerBuilding(building.coords)}>{building.number}</li>)}
                         </ul>}
-
-                    {this.state.navLink && <div className="Nav_Link">
-                        <a href={this.state.navLink} target="_blank" rel="noopener noreferrer"><img src="./res/nav.png" alt="Directions" height={50} width={50} /></a>
-                    </div>}
-
                 </form>
+
+                {this.state.navLink && <div className="Nav_Link">
+                    <a href={this.state.navLink} target="_blank" rel="noopener noreferrer"><img src="./res/nav.png" alt="Directions" height={50} width={50} /></a>
+                </div>}
 
             </div>
         );
