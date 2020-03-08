@@ -94,7 +94,7 @@ class Search extends Component {
                     </ul>}
                 </form>}
 
-                {this.state.waiting4DB && <div className="Loading">
+                {!this.state.waiting4DB && <div className="Loading">
                     <h3>
                         Talking to server, please wait
                     </h3>
