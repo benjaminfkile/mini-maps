@@ -11,10 +11,11 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      targetLat: null,
-      targetLng: null,
+      targetLat: 46.8721,
+      targetLng: -113.9940,
       addresses: null,
-      buildings: null
+      buildings: null,
+      location: false
     }
   }
 
@@ -39,16 +40,11 @@ class App extends Component {
       .catch(error => console.log('Sorry the service is down \n:(\nPlease try again later'));
   }
 
-
-
   addressHandler = (lat, lng) => {
     this.state.currentMap.setCenter(new window.google.maps.LatLng(lat, lng));
   }
 
-
   buildingHandler = async (lat, lng, suit) => {
-
-    // this.setState({ navLink: 'https://www.google.com/maps/search/?api=1&query=' + lat + ',' + lng })
     this.state.currentMap.setCenter(new window.google.maps.LatLng(lat, lng));
   }
 
@@ -61,8 +57,9 @@ class App extends Component {
   getLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.showPosition);
+      this.setState({location: true})
     } else {
-      alert('oops')
+      this.setState({location: false})
     }
   }
   showPosition = (position) => {
@@ -83,7 +80,7 @@ class App extends Component {
           buildings={this.state.buildings}
         />
 
-        <div className="Map_Container">
+        {this.state.location && <div className="Map_Container">
 
           <Map
             id="Map"
@@ -108,7 +105,7 @@ class App extends Component {
 
           <Pointer />
 
-        </div>
+        </div>}
       </div>
     );
   }

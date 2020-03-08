@@ -11,6 +11,7 @@
     border-style: solid;
     border-color: white;
     border-radius: 3px;
+    font-family: 'Raleway', sans-serif;
     }
 .Search h2{
     text-align: center;
@@ -51,16 +52,17 @@
 }
 
 .Address_Results h2:hover{
-    color: hotpink;
+    color: rgb(124, 124, 124);
     }
 .Suit_Results li:hover{
-    color: lime;
+    color: rgb(124, 124, 124);
     }
 
 .Nav_Link{
     z-index: 100;
-    position: absolute;
-    left: 5vw;
-    top: 32vw;
+    /* position: absolute;
+    left: 7vw;
+    top: 43vw; */
+    margin-top: 55vh;
     }
 
