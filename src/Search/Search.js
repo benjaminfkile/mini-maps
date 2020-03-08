@@ -11,12 +11,13 @@ class Search extends Component {
             buildingList: [],
             navLink: null,
             waiting4DB: true,
+            interval: ''
         };
         this.handleChange = this.handleChange.bind(this);
     }
 
-    componentDidMount(){
-        setInterval(this.listenForDB, 1000)
+    componentDidMount() {
+        this.setState({ interval: setInterval(this.listen4DB, 1000) })
     }
 
     handleChange(event) {
@@ -24,7 +25,7 @@ class Search extends Component {
         this.setState({ value: event.target.value });
         this.addressFilter(this.state.value)
     }
-    
+
     addressFilter = (args) => {
         let addresses = []
         let buildings = []
@@ -47,10 +48,16 @@ class Search extends Component {
         this.setState({ addressList: addresses })
     }
 
-    listenForDB = () =>{
-        if(this.props.addresses[0].address){
-            this.setState({waiting4DB: false})
+
+    listen4DB = () => {
+        if (this.props.addresses) {
+            this.setState({ waiting4DB: false })
+            this.stopListening()
         }
+    }
+
+    stopListening = () => {
+        clearInterval(this.state.interval);
     }
 
     centerAddress = (addressCoords) => {
@@ -69,9 +76,9 @@ class Search extends Component {
         let addresses = this.state.addressList
         return (
             <div className="Search">
-                <h2>
+                {!this.state.waiting4DB && <h2>
                     Search for an address
-                </h2>
+                </h2>}
                 {!this.state.waiting4DB && <form>
                     <input type="text" value={this.state.value} onChange={this.handleChange} />
                     {addresses.length > 0 && this.state.value && <div className="Address_Results">
@@ -82,20 +89,18 @@ class Search extends Component {
 
 
                     {this.state.buildingList && this.state.value &&
-                        <ul className="Suit_Results">
-                            {buildings.map(building => <li key={Math.random()*Math.random()} onClick={() => this.centerBuilding(building.coords)}>{building.number}</li>)}
-                        </ul>}
+                    <ul className="Suit_Results">
+                        {buildings.map(building => <li key={Math.random() * Math.random()} onClick={() => this.centerBuilding(building.coords)}>{building.number}</li>)}
+                    </ul>}
                 </form>}
 
                 {this.state.waiting4DB && <div className="Loading">
                     <h3>
-                        Establishing Connection...
+                        Talking to server, please wait
                     </h3>
                 </div>}
-
-                {this.state.navLink && <div className="Nav_Link">
-                    <a href={this.state.navLink} target="_blank" rel="noopener noreferrer"><img src="./res/nav.png" alt="Directions" height={50} width={50} /></a>
-                </div>}
+                {this.state.navLink && <a href={this.state.navLink} target="_blank" rel="noopener noreferrer"><img src="./res/nav.png" alt="Directions" height={50} width={50} />
+                </a>}
 
             </div>
         );

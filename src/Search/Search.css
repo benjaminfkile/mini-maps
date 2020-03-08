@@ -38,7 +38,7 @@
     margin-top: 3vh;
     }
 .Suit_Results{
-    position: absolute;
+    /* position: absolute; */
     text-align: center;
     margin-top: 3vh;
     width: 15vw;
@@ -58,11 +58,14 @@
     color: rgb(124, 124, 124);
     }
 
-.Nav_Link{
-    z-index: 100;
-    /* position: absolute;
-    left: 7vw;
-    top: 43vw; */
-    margin-top: 55vh;
-    }
+.Search img{
+    position: absolute;
+    margin-top: 3vh;
+    margin-left: 6vw;
+
+}
+.Loading h3{
+    margin-top: 3vh;
+    text-align: center;
+}
 
