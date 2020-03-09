@@ -86,14 +86,14 @@ class App extends Component {
             id="Map"
             options={{
               center: { lat: parseFloat(this.state.targetLat), lng: parseFloat(this.state.targetLng) },
-              zoom: 19,
+              zoom: 17.5,
               gestureHandling: 'none',
               zoomControl: false,
               fullscreenControl: false,
               streetViewControl: false,
               mapTypeControl: false,
-              mapTypeId: 'hybrid',
-              tilt: 45,
+              mapTypeId: 'satellite',
+              tilt: 0,
               rotateControl: true,
             }}
             onMapLoad={map => {

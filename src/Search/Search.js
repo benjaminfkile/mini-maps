@@ -49,6 +49,8 @@ class Search extends Component {
     }
 
 
+
+
     listen4DB = () => {
         if (this.props.addresses) {
             this.setState({ waiting4DB: false })
@@ -98,7 +100,7 @@ class Search extends Component {
                             </ul>}
                     </form>}
 
-                    {this.state.value === '' &&
+                {this.state.value === '' &&
                     <div className="Splash">
                         <h3>
                             Powered by Google Maps

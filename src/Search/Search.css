@@ -1,5 +1,6 @@
 
 @media (min-width: 600px) {
+
     .Search{
         position: absolute;
         z-index: 100;
@@ -62,7 +63,7 @@
     
     .Nav_Link{
         margin-top: 3vh;
-        margin-left: 2vw;
+        margin-left: 0vw;
     }
     .Search img{
         /* position: relative; */
@@ -82,7 +83,6 @@
     z-index: 100;
     width: 100vw;
     height: 25vh;
-    padding-left: 2vw;
     padding-right: 2vw;
     background-color: rgb(255, 255, 255);
     border-style: solid;
@@ -139,7 +139,7 @@
 
 .Nav_Link{
     margin-top: -23vh;
-    margin-left: -1vw;
+    margin-left: 3vw;
 }
 .Search img{
     /* position: relative; */
