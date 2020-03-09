@@ -1,10 +1,87 @@
-.Search{
+
+@media (min-width: 600px) {
+    .Search{
+        position: absolute;
+        z-index: 100;
+        width: 15vw;
+        top: 2vh;
+        left: .8vw;
+        height: 80vh;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        background-color: rgb(255, 255, 255);
+        border-style: solid;
+        border-color: white;
+        border-radius: 3px;
+        font-family: 'Raleway', sans-serif;
+        }
+    .Search h2{
+        text-align: center;
+        margin-top: 2vh;
+        font-size: 2.5vh;
+    }
+    .Search li{
+        list-style: none;
+    }
+    .Search input{
+        display: flex;
+        width: 15vw;
+        margin-top: 2vh;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        text-align: center;
+        font-size: 2.5vh;
+    }
+    .Address_Results h2{
+        text-align: center;
+        margin-top: 3vh;
+        }
+    .Suit_Results{
+        /* position: relative; */
+        text-align: center;
+        margin-top: 3vh;
+        width: 15vw;
+        height: 40vh;
+        left: 1.5vw;
+        overflow: scroll;
+    }
+    .Suit_Results li{
+        font-size: 3vh;
+        margin-bottom: 1vw;
+    }
+    
+    .Address_Results h2:hover{
+        color: rgb(124, 124, 124);
+        }
+    .Suit_Results li:hover{
+        color: rgb(124, 124, 124);
+        }
+    
+    .Nav_Link{
+        margin-top: 3vh;
+        margin-left: 2vw;
+    }
+    .Search img{
+        /* position: relative; */
+    }
+    
+    .Loading h3{
+        margin-top: 3vh;
+        text-align: center;
+    }
+    .Splash{
+        display: none;
+    }
+}
+@media (max-width: 599px) {
+    .Search{
     position: absolute;
     z-index: 100;
-    width: 15vw;
-    top: 2vh;
-    left: .8vw;
-    height: 80vh;
+    width: 100vw;
+    height: 25vh;
     padding-left: 2vw;
     padding-right: 2vw;
     background-color: rgb(255, 255, 255);
@@ -23,7 +100,7 @@
 }
 .Search input{
     display: flex;
-    width: 15vw;
+    width: 60vw;
     margin-top: 2vh;
     margin-left: auto;
     margin-right: auto;
@@ -38,17 +115,19 @@
     margin-top: 3vh;
     }
 .Suit_Results{
-    /* position: absolute; */
+    display: flex;
     text-align: center;
     margin-top: 3vh;
-    width: 15vw;
-    height: 50vh;
+    margin-left: 7vw;
+    width: 80vw;
+    height: 6vh;
     left: 1.5vw;
     overflow: scroll;
 }
 .Suit_Results li{
     font-size: 3vh;
-    margin-bottom: 1vw;
+    margin-left: 7vw;
+
 }
 
 .Address_Results h2:hover{
@@ -58,14 +137,27 @@
     color: rgb(124, 124, 124);
     }
 
-.Search img{
-    position: absolute;
-    margin-top: 3vh;
-    margin-left: 6vw;
-
+.Nav_Link{
+    margin-top: -23vh;
+    margin-left: -1vw;
 }
+.Search img{
+    /* position: relative; */
+}
+
 .Loading h3{
     margin-top: 3vh;
     text-align: center;
+    color: rgb(124, 124, 124);
+}
+.Splash{
+    margin-top: 5vh;
+    text-align: center;
+    color: rgb(124, 124, 124);
+}
+/* .Map{
+    margin-top: 15vh;
+} */
+
 }
 

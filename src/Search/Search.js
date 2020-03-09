@@ -52,11 +52,12 @@ class Search extends Component {
     listen4DB = () => {
         if (this.props.addresses) {
             this.setState({ waiting4DB: false })
-            this.stopListening()
+            this.stopListening4DB()
         }
+        console.log(this.state.waiting4DB)
     }
 
-    stopListening = () => {
+    stopListening4DB = () => {
         clearInterval(this.state.interval);
     }
 
@@ -76,31 +77,50 @@ class Search extends Component {
         let addresses = this.state.addressList
         return (
             <div className="Search">
-                {!this.state.waiting4DB && <h2>
-                    Search for an address
-                </h2>}
-                {!this.state.waiting4DB && <form>
-                    <input type="text" value={this.state.value} onChange={this.handleChange} />
-                    {addresses.length > 0 && this.state.value && <div className="Address_Results">
-                        <h2
-                            onClick={() => this.centerAddress(addresses[0].initCoords)}>{addresses[0].address}
-                        </h2>
+                {!this.state.waiting4DB &&
+                    <h2>
+                        Search for an address
+                    </h2>}
+
+                {!this.state.waiting4DB &&
+                    <form>
+                        <input type="text" value={this.state.value} onChange={this.handleChange} />
+                        {addresses.length > 0 && this.state.value &&
+                            <div className="Address_Results">
+                                <h2
+                                    onClick={() => this.centerAddress(addresses[0].initCoords)}>{addresses[0].address}
+                                </h2>
+                            </div>}
+
+                        {this.state.buildingList && this.state.value &&
+                            <ul className="Suit_Results">
+                                {buildings.map(building => <li key={Math.random() * Math.random()} onClick={() => this.centerBuilding(building.coords)}>{building.number}</li>)}
+                            </ul>}
+                    </form>}
+
+                    {this.state.value === '' &&
+                    <div className="Splash">
+                        <h3>
+                            Powered by Google Maps
+                        </h3>
+                        <h4>
+                            and Pizza Guys
+                        </h4>
                     </div>}
 
+                {this.state.navLink &&
+                    <div className="Nav_Link">
+                        <a href={this.state.navLink} target="_blank" rel="noopener noreferrer"><img src="./res/nav.png" alt="Directions" height={50} width={50} />
+                        </a>
+                    </div>}
 
-                    {this.state.buildingList && this.state.value &&
-                    <ul className="Suit_Results">
-                        {buildings.map(building => <li key={Math.random() * Math.random()} onClick={() => this.centerBuilding(building.coords)}>{building.number}</li>)}
-                    </ul>}
-                </form>}
-
-                {!this.state.waiting4DB && <div className="Loading">
-                    <h3>
-                        Talking to server, please wait
+                {this.state.waiting4DB &&
+                    <div className="Loading">
+                        <h3>
+                            Talking to server, please wait
                     </h3>
-                </div>}
-                {this.state.navLink && <a href={this.state.navLink} target="_blank" rel="noopener noreferrer"><img src="./res/nav.png" alt="Directions" height={50} width={50} />
-                </a>}
+                    </div>}
+
 
             </div>
         );
