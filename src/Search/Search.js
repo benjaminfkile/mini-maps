@@ -112,7 +112,7 @@ class Search extends Component {
 
                 {this.state.navLink &&
                     <div className="Nav_Link">
-                        <a href={this.state.navLink} target="_blank" rel="noopener noreferrer"><img src="./res/nav.png" alt="Directions" height={50} width={50} />
+                        <a href={this.state.navLink} target="_blank" rel="noopener noreferrer"><img src="./res/nav.png" alt="Directions" height={"50vw"} width={"50vh"} />
                         </a>
                     </div>}
 

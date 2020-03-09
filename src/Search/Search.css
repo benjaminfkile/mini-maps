@@ -1,5 +1,5 @@
 
-@media (min-width: 600px) {
+@media (min-width: 700px) {
 
     .Search{
         position: absolute;
@@ -77,11 +77,11 @@
         display: none;
     }
 }
-@media (max-width: 599px) {
+@media (max-width: 699px) {
     .Search{
     position: absolute;
     z-index: 100;
-    width: 100vw;
+    width: 102vw;
     height: 25vh;
     padding-right: 2vw;
     background-color: rgb(255, 255, 255);
@@ -141,7 +141,7 @@
     margin-top: -23vh;
     margin-left: 3vw;
 }
-.Search img{
+.Nav_Link img{
     /* position: relative; */
 }
 
