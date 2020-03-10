@@ -94,7 +94,7 @@ class App extends Component {
               mapTypeControl: false,
               mapTypeId: 'satellite',
               tilt: 0,
-              rotateControl: true,
+              rotateControl: false,
             }}
             onMapLoad={map => {
 
