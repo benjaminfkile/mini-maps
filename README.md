@@ -2,7 +2,7 @@
 
 This project connects to the Zero In API (https://github.com/benjaminfkile/zero-in-api.git)
 
-Zero In helps delivery and taxi drivers find appartment buildings in larg complexes.
+Zero In helps delivery and taxi drivers find appartment buildings in large complexes.
 
 ## Install
 
@@ -30,6 +30,7 @@ Search for an address and then click on the appartment you are trying to find.
 
 Get turn by turn directions if you would like.
 
+![Screenshot from 2020-03-10 01-17-50](https://user-images.githubusercontent.com/34235864/76288739-04d13c00-626d-11ea-86be-00ed0b5ba708.png)
 
 
 Created with:
