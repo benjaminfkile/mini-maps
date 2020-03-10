@@ -2,13 +2,13 @@
 
 This project connects to the Zero In API (https://github.com/benjaminfkile/zero-in-api.git)
 
-Zero In helps delivery and taxi drivers find appartment buildings in larg complexes
+Zero In helps delivery and taxi drivers find appartment buildings in larg complexes.
 
 ## Install
 
 git clone https://github.com/benjaminfkile/zero-in-client.git
 
-cd to lightful-client
+cd to zero-in-client
 
 npm install
 
@@ -20,7 +20,9 @@ npm test
 
 ## Screenshots
 
-Landing displays a Christmas card explaining how to use the app
+Landing displays a search field explaining how to use the app
+
+
 
 Created with:
 
