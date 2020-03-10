@@ -4,6 +4,10 @@ This project connects to the Zero In API (https://github.com/benjaminfkile/zero-
 
 Zero In helps delivery and taxi drivers find appartment buildings in large complexes.
 
+## API documentation
+
+https://github.com/benjaminfkile/zero-in-api/blob/master/README.md
+
 ## Install
 
 git clone https://github.com/benjaminfkile/zero-in-client.git
