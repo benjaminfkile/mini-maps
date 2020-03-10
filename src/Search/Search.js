@@ -56,7 +56,6 @@ class Search extends Component {
             this.setState({ waiting4DB: false })
             this.stopListening4DB()
         }
-        console.log(this.state.waiting4DB)
     }
 
     stopListening4DB = () => {

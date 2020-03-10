@@ -15,7 +15,7 @@
         border-color: white;
         border-radius: 3px;
         font-family: 'Raleway', sans-serif;
-        }
+    }
     .Search h2{
         text-align: center;
         margin-top: 2vh;
@@ -41,7 +41,6 @@
         margin-top: 3vh;
         }
     .Suit_Results{
-        /* position: relative; */
         text-align: center;
         margin-top: 3vh;
         width: 15vw;
@@ -56,19 +55,16 @@
     
     .Address_Results h2:hover{
         color: rgb(124, 124, 124);
-        }
+    }
     .Suit_Results li:hover{
         color: rgb(124, 124, 124);
-        }
+    }
     
     .Nav_Link{
         margin-top: 3vh;
         margin-left: 0vw;
     }
-    .Search img{
-        /* position: relative; */
-    }
-    
+     
     .Loading h3{
         margin-top: 3vh;
         text-align: center;
@@ -92,74 +88,74 @@
     border-radius: 3px;
     font-family: 'Raleway', sans-serif;
     }
-.Search h2{
-    text-align: center;
-    margin-top: 2vh;
-    font-size: 2.5vh;
-}
-.Search li{
-    list-style: none;
-}
-.Search input{
-    display: flex;
-    width: 60vw;
-    margin-top: 2vh;
-    margin-left: auto;
-    margin-right: auto;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    text-align: center;
-    font-size: 2.5vh;
-}
-.Address_Results h2{
-    text-align: center;
-    margin-top: 3vh;
-    }
-.Suit_Results{
-    display: flex;
-    text-align: center;
-    margin-top: 3vh;
-    margin-left: 7vw;
-    width: 80vw;
-    height: 6vh;
-    left: 1.5vw;
-    overflow: scroll;
-}
-.Suit_Results li{
-    font-size: 3vh;
-    margin-left: 7vw;
-
-}
-
-.Address_Results h2:hover{
-    color: rgb(124, 124, 124);
-    }
-.Suit_Results li:hover{
-    color: rgb(124, 124, 124);
+    
+    .Search h2{
+        text-align: center;
+        margin-top: 2vh;
+        font-size: 2.5vh;
     }
 
-.Nav_Link{
-    margin-top: -23vh;
-    margin-left: 3vw;
-}
-.Nav_Link img{
-    /* position: relative; */
-}
+    .Search li{
+        list-style: none;
+    }
 
-.Loading h3{
-    margin-top: 3vh;
-    text-align: center;
-    color: rgb(124, 124, 124);
-}
-.Splash{
-    margin-top: 5vh;
-    text-align: center;
-    color: rgb(124, 124, 124);
-}
-/* .Map{
-    margin-top: 15vh;
-} */
+    .Search input{
+        display: flex;
+        width: 60vw;
+        margin-top: 2vh;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        text-align: center;
+        font-size: 2.5vh;
+    }
 
+    .Address_Results h2{
+        text-align: center;
+        margin-top: 3vh;
+    }
+
+    .Suit_Results{
+        display: flex;
+        text-align: center;
+        margin-top: 3vh;
+        margin-left: 7vw;
+        width: 80vw;
+        height: 6vh;
+        left: 1.5vw;
+        overflow: scroll;
+    }
+
+    .Suit_Results li{
+        font-size: 3vh;
+        margin-left: 7vw;
+    }
+
+    .Address_Results h2:hover{
+        color: rgb(124, 124, 124);
+    }
+
+    .Suit_Results li:hover{
+        color: rgb(124, 124, 124);
+    }
+
+    .Nav_Link{
+        margin-top: -23vh;
+        margin-left: 3vw;
+    }
+
+    .Loading h3{
+        margin-top: 3vh;
+        text-align: center;
+        color: rgb(124, 124, 124);
+    }
+
+    .Splash{
+        margin-top: 5vh;
+        text-align: center;
+        color: rgb(124, 124, 124);
+    }
 }
 

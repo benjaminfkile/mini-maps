@@ -11,7 +11,6 @@ class Pointer extends Component{
             </div>
         )
     }
-
 }
 
 export default Pointer

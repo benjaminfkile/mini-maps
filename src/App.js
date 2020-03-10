@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
 import Map from './Map/Map'
 import Search from './Search/Search'
-import './dummy-store'
 import './App.css'
-import dummyStore from './dummy-store';
 import Pointer from './Pointer/Pointer'
 
 class App extends Component {
@@ -25,7 +23,7 @@ class App extends Component {
     fetch(targetUrl)
       .then(response => response.json())
       .then(data => {
-        this.setState({addresses: data})
+        this.setState({ addresses: data })
       })
       .catch(error => console.log('Sorry the service is down \n:(\nPlease try again later'));
   }
@@ -35,7 +33,7 @@ class App extends Component {
     fetch(targetUrl)
       .then(response => response.json())
       .then(data => {
-        this.setState({buildings: data})
+        this.setState({ buildings: data })
       })
       .catch(error => console.log('Sorry the service is down \n:(\nPlease try again later'));
   }
@@ -57,9 +55,9 @@ class App extends Component {
   getLocation = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(this.showPosition);
-      this.setState({location: true})
+      this.setState({ location: true })
     } else {
-      this.setState({location: false})
+      this.setState({ location: false })
     }
   }
   showPosition = (position) => {
@@ -73,13 +71,11 @@ class App extends Component {
       <div className="App_Container">
 
         <Search
-          store={dummyStore}
           addressHandler={this.addressHandler}
           buildingHandler={this.buildingHandler}
           addresses={this.state.addresses}
           buildings={this.state.buildings}
         />
-
         {this.state.location && <div className="Map_Container">
 
           <Map
@@ -97,9 +93,7 @@ class App extends Component {
               rotateControl: false,
             }}
             onMapLoad={map => {
-
               this.setState({ currentMap: map })
-
             }}
           />
 

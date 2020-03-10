@@ -19,7 +19,7 @@ class Map extends Component {
     if (!window.google) {
       var s = document.createElement('script');
       s.type = 'text/javascript';
-      s.src = `https://maps.google.com/maps/api/js`;
+      // s.src = `https://maps.google.com/maps/api/js`;
       s.src = `https://maps.google.com/maps/api/js?key=AIzaSyAj6zqW55nq95JI6gGGj-BtkN_hfZhJScM`;
       var x = document.getElementsByTagName('script')[0];
       x.parentNode.insertBefore(s, x);
@@ -33,7 +33,6 @@ class Map extends Component {
 
   render() {
     return (
-      // <div className="Map" style={{ width: "100vw", height: "100vh"}} id={this.props.id} />
       <div className="Map"  id={this.props.id} />
 
     );
