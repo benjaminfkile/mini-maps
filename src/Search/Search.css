@@ -46,7 +46,8 @@
         width: 15vw;
         height: 40vh;
         left: 1.5vw;
-        overflow: scroll;
+        overflow-x: hidden;
+        overflow-y: scroll;
     }
     .Suit_Results li{
         font-size: 3vh;
