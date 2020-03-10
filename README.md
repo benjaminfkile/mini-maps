@@ -20,9 +20,15 @@ npm test
 
 ## Screenshots
 
-Landing displays a search field explaining how to use the app
+Landing displays a search field explaining how to use the app.
 
 ![Screenshot from 2020-03-10 01-13-04](https://user-images.githubusercontent.com/34235864/76288456-5deca000-626c-11ea-9f2c-4f9ec6006f91.png)
+
+Search for an address and then click on the appartment you are trying to find.
+
+![Screenshot from 2020-03-10 01-15-03](https://user-images.githubusercontent.com/34235864/76288585-af952a80-626c-11ea-8932-81778a655575.png)
+
+Get turn by turn directions if you would like.
 
 
 
