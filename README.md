@@ -1,8 +1,8 @@
 ## Zero In
 
-This project connects to the Zero In API (https://github.com/benjaminfkile/lightful-api.git)
+This project connects to the Zero In API (https://github.com/benjaminfkile/zero-in-api.git)
 
-Light Finder shows its clients the location of all the best Christmas Lights in Missoula MT, it is an Express App hosted on Heroku that contains the light coordinates and pictures
+Zero In helps delivery and taxi drivers find appartment buildings in larg complexes
 
 ## Install
 
