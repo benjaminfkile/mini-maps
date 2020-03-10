@@ -4,13 +4,6 @@
     height: 100vh;
 }
 
-@media (max-width: 599px) {
-    .Map{
-    width: 102vw;
-    height: 101.95vh;   
-    }
-
-}
 
 
 

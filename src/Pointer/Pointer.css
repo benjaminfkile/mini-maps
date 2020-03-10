@@ -1,6 +1,11 @@
 .Pointer{
     position: absolute;
     top: 45vh;
-    left: 49vw;
-    
+    left: 48vw; 
+}
+
+@media (max-width: 699px) {
+    .Pointer{
+        left: 46vw;
+    }
 }

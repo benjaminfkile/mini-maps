@@ -81,7 +81,9 @@
     .Search{
     position: absolute;
     z-index: 100;
-    width: 100vw;
+    width: 95vw;
+    top: 1.5vw;
+    left: 1.5vw;
     height: 25vh;
     padding-right: 2vw;
     background-color: rgb(255, 255, 255);
