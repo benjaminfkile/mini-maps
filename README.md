@@ -22,6 +22,8 @@ npm test
 
 Landing displays a search field explaining how to use the app
 
+![Screenshot from 2020-03-10 01-13-04](https://user-images.githubusercontent.com/34235864/76288456-5deca000-626c-11ea-9f2c-4f9ec6006f91.png)
+
 
 
 Created with:
